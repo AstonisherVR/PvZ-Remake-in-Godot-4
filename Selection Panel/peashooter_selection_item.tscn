@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bedgl16muckku"]
+
+[ext_resource type="PackedScene" uid="uid://cetpws3mtbfjb" path="res://Selection Panel/base_selection_item.tscn" id="1_uvklq"]
+[ext_resource type="Script" path="res://Selection Panel/peashooter_selection_item.gd" id="2_clahj"]
+[ext_resource type="Texture2D" uid="uid://d3qaxbw06yjt6" path="res://Plants/Peashooter/Peashooter.bmp" id="3_8uyan"]
+
+[node name="PeashooterSelectionItem" instance=ExtResource("1_uvklq")]
+script = ExtResource("2_clahj")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(56, 57.98)
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("3_8uyan")

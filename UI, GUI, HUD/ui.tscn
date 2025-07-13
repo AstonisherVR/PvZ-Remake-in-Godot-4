@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1v3g2t5dri7x"]
+
+[ext_resource type="Script" path="res://UI, GUI, HUD/ui.gd" id="1_dtiqe"]
+[ext_resource type="PackedScene" uid="uid://d2po838ywglas" path="res://Selection Panel/plant_selection_panel.tscn" id="1_vu8qd"]
+[ext_resource type="PackedScene" uid="uid://bhhesv41a00rr" path="res://Prop Plants/base_plant_prop.tscn" id="2_mdq0d"]
+[ext_resource type="Texture2D" uid="uid://1gw3y0hhbndb" path="res://Plants/Projectiles & Stuff/Pea.bmp" id="2_trf1t"]
+[ext_resource type="PackedScene" uid="uid://k8fmm1yfo287" path="res://Plants/Peashooter/peashooter.tscn" id="3_oyyn6"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_dtiqe")
+PLANT_PROPS = Array[PackedScene]([ExtResource("2_mdq0d")])
+PLANTS = Array[PackedScene]([ExtResource("3_oyyn6")])
+
+[node name="PlantSelectionPanel" parent="." instance=ExtResource("1_vu8qd")]
+
+[node name="PlantSelectionContainer" parent="PlantSelectionPanel" index="0"]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 338.0
+offset_bottom = 168.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Shovel Texture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -96.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_trf1t")
+expand_mode = 1
+
+[connection signal="gui_input" from="Shovel Texture" to="." method="_on_shovel_texture_gui_input"]
+
+[editable path="PlantSelectionPanel"]

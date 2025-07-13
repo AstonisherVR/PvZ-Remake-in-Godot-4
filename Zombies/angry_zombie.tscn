@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://x46vvkmqeckl"]
+
+[ext_resource type="PackedScene" uid="uid://b2shba81o6wk8" path="res://Zombies/base_zombie.tscn" id="1_fem6t"]
+[ext_resource type="Script" path="res://Zombies/angry_zombie.gd" id="2_xgddq"]
+
+[node name="Angry Zombie" instance=ExtResource("1_fem6t")]
+modulate = Color(1, 0.0235294, 0, 1)
+script = ExtResource("2_xgddq")
+health = 10
+
+[node name="Sprite2D" parent="." index="0"]
+flip_v = true
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = -1.58825

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhppvyc118s1c"]
+
+[ext_resource type="Script" path="res://prop_manager.gd" id="1_ptvt5"]
+
+[node name="Prop Manager" type="Node"]
+script = ExtResource("1_ptvt5")

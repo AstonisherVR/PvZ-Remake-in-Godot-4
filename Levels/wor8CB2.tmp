@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://cll4pj3r24bhc"]
+
+[ext_resource type="Script" path="res://Levels/world.gd" id="1_ap0rg"]
+[ext_resource type="Texture2D" uid="uid://mkrcsnxej5t" path="res://Levels/Map.bmp" id="1_p2chd"]
+[ext_resource type="PackedScene" uid="uid://k8fmm1yfo287" path="res://Plants/Peashooter/peashooter.tscn" id="2_r2kah"]
+[ext_resource type="PackedScene" uid="uid://b2shba81o6wk8" path="res://Zombies/base_zombie.tscn" id="3_3dg2u"]
+[ext_resource type="PackedScene" uid="uid://d2po838ywglas" path="res://Selection Panel/plant_selection_panel.tscn" id="4_v1nl3"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_ap0rg")
+
+[node name="Map" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(780.693, 480.5)
+scale = Vector2(1.87354, 1.87354)
+texture = ExtResource("1_p2chd")
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlantSelectionPanel" parent="CanvasLayer" instance=ExtResource("4_v1nl3")]
+
+[node name="Peashooter" parent="." instance=ExtResource("2_r2kah")]
+position = Vector2(96, 536)
+fire_rate = 22.0
+
+[node name="Peashooter2" parent="." instance=ExtResource("2_r2kah")]
+position = Vector2(92, 324)
+fire_rate = 11.0
+
+[node name="Peashooter3" parent="." instance=ExtResource("2_r2kah")]
+position = Vector2(104, 662)
+fire_rate = 31.0
+
+[node name="Peashooter4" parent="." instance=ExtResource("2_r2kah")]
+position = Vector2(91, 427)
+fire_rate = 23.0
+
+[node name="Base Zombie" parent="." instance=ExtResource("3_3dg2u")]
+position = Vector2(1318, 273)
+health = 800
+speed_limit = 3250.0
+
+[node name="Base Zombie2" parent="." instance=ExtResource("3_3dg2u")]
+position = Vector2(1318, 483)
+health = 1000
+acceleration = 80.0
+
+[node name="Base Zombie3" parent="." instance=ExtResource("3_3dg2u")]
+position = Vector2(1319, 688)
+health = 2000
+acceleration = 5.0
+speed_limit = 5250.0
+
+[connection signal="plant_bought" from="CanvasLayer/PlantSelectionPanel/PlantSelectionContainer/PeashooterSelectionPanel" to="." method="_on_peashooter_selection_panel_plant_bought"]
+[connection signal="plant_bought" from="CanvasLayer/PlantSelectionPanel/PlantSelectionContainer/SunflowerSelectionItem" to="." method="_on_sunflower_selection_item_plant_bought"]
+[connection signal="plant_bought" from="CanvasLayer/PlantSelectionPanel/PlantSelectionContainer/WallnutSelectionItem" to="." method="_on_wallnut_selection_item_plant_bought"]
+
+[editable path="CanvasLayer/PlantSelectionPanel"]

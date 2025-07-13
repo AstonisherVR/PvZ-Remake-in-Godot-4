@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0hp26mlkp12j"]
+
+[ext_resource type="PackedScene" uid="uid://cetpws3mtbfjb" path="res://Selection Panel/base_selection_item.tscn" id="1_fcmyf"]
+[ext_resource type="Script" path="res://Selection Panel/sunflower_selection_item.gd" id="2_hxgjp"]
+[ext_resource type="Texture2D" uid="uid://d0jfxehc41bn2" path="res://Plants/Sunflower/Sunflower.bmp" id="3_evuxi"]
+
+[node name="SunflowerSelectionItem" instance=ExtResource("1_fcmyf")]
+script = ExtResource("2_hxgjp")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(56, 64)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("3_evuxi")

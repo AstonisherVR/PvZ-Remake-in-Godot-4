@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://cll4pj3r24bhc"]
+
+[ext_resource type="Texture2D" uid="uid://mkrcsnxej5t" path="res://Levels/Map.bmp" id="1_p2chd"]
+[ext_resource type="Script" path="res://Levels/level_manager.gd" id="2_37or7"]
+[ext_resource type="PackedScene" uid="uid://k8fmm1yfo287" path="res://Plants/Peashooter/peashooter.tscn" id="2_r2kah"]
+[ext_resource type="PackedScene" uid="uid://b2shba81o6wk8" path="res://Zombies/base_zombie.tscn" id="3_3dg2u"]
+[ext_resource type="PackedScene" uid="uid://c3381canb1kcr" path="res://Zombies/zombie_spawner.tscn" id="4_eetix"]
+[ext_resource type="PackedScene" uid="uid://bhppvyc118s1c" path="res://prop_manager.tscn" id="6_o1vay"]
+[ext_resource type="PackedScene" uid="uid://bepionw0hm1f1" path="res://grid_spawner.tscn" id="8_8jpmc"]
+[ext_resource type="PackedScene" uid="uid://d1v3g2t5dri7x" path="res://UI, GUI, HUD/ui.tscn" id="8_o31ar"]
+
+[node name="Test Level" type="Node2D"]
+
+[node name="Map" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(780.693, 480.5)
+scale = Vector2(1.87354, 1.87354)
+texture = ExtResource("1_p2chd")
+metadata/_edit_lock_ = true
+
+[node name="Peashooter" parent="." instance=ExtResource("2_r2kah")]
+position = Vector2(116, 514)
+fire_rate = 2.0
+
+[node name="Base Zombie" parent="." instance=ExtResource("3_3dg2u")]
+position = Vector2(1339, 506)
+health = 50
+
+[node name="Zombie Spawner" parent="." instance=ExtResource("4_eetix")]
+
+[node name="Level Manager" type="Node" parent="."]
+script = ExtResource("2_37or7")
+
+[node name="Prop Manager" parent="." instance=ExtResource("6_o1vay")]
+
+[node name="UI" parent="." instance=ExtResource("8_o31ar")]
+
+[node name="GridSpawner" parent="." instance=ExtResource("8_8jpmc")]

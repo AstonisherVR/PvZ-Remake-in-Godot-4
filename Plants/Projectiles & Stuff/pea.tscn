@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://x5mmsw3hjq1m"]
+
+[ext_resource type="Script" path="res://Plants/Projectiles & Stuff/pea.gd" id="1_bsgej"]
+[ext_resource type="Texture2D" uid="uid://1gw3y0hhbndb" path="res://Plants/Projectiles & Stuff/Pea.bmp" id="2_u8y4e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3hsa8"]
+radius = 16.0
+
+[node name="Pea" type="Area2D"]
+top_level = true
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_bsgej")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("2_u8y4e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3hsa8")
+
+[node name="VisibleNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+unique_name_in_owner = true
+
+[node name="StopExistingTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.8
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleNotifier2D" to="." method="_on_visible_notifier_2d_screen_exited"]
+[connection signal="timeout" from="StopExistingTimer" to="." method="_on_stop_existing_timer_timeout"]

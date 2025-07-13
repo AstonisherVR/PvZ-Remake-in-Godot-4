@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhhesv41a00rr"]
+
+[ext_resource type="Script" path="res://Prop Plants/base_plant_prop.gd" id="2_jqs0y"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tkssa"]
+resource_local_to_scene = true
+size = Vector2(95, 100)
+
+[node name="BasePlantProp" type="Sprite2D"]
+texture = SubResource("PlaceholderTexture2D_tkssa")
+script = ExtResource("2_jqs0y")

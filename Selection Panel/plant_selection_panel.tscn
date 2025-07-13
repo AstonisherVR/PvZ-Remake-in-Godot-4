@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2po838ywglas"]
+
+[ext_resource type="PackedScene" uid="uid://bedgl16muckku" path="res://Selection Panel/peashooter_selection_item.tscn" id="2_o017s"]
+[ext_resource type="PackedScene" uid="uid://b0hp26mlkp12j" path="res://Selection Panel/sunflower_selection_item.tscn" id="3_mjfg8"]
+[ext_resource type="PackedScene" uid="uid://c306ot0ya8t08" path="res://Selection Panel/wallnut_selection_item.tscn" id="4_ac7om"]
+
+[sub_resource type="Theme" id="Theme_uelrs"]
+
+[node name="PlantSelectionPanel" type="Panel"]
+custom_minimum_size = Vector2(480, 160)
+layout_direction = 2
+offset_right = 480.0
+offset_bottom = 160.0
+theme = SubResource("Theme_uelrs")
+
+[node name="PlantSelectionContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1
+
+[node name="PeashooterSelectionPanel" parent="PlantSelectionContainer" instance=ExtResource("2_o017s")]
+layout_mode = 2
+
+[node name="SunflowerSelectionItem" parent="PlantSelectionContainer" instance=ExtResource("3_mjfg8")]
+layout_mode = 2
+
+[node name="WallnutSelectionItem" parent="PlantSelectionContainer" instance=ExtResource("4_ac7om")]
+layout_mode = 2

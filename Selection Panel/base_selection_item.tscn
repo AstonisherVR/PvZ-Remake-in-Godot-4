@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cetpws3mtbfjb"]
+
+[ext_resource type="Script" path="res://Selection Panel/base_selection_item.gd" id="1_7g6nr"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sykib"]
+resource_local_to_scene = true
+size = Vector2(300, 400)
+
+[node name="BaseSelectionItem" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(112, 168)
+offset_right = 112.0
+offset_bottom = 168.0
+pivot_offset = Vector2(56, 84)
+script = ExtResource("1_7g6nr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_sykib")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
